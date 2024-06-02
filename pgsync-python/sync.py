@@ -22,7 +22,7 @@ def connect_to_postgres():
 
 def connect_to_elasticsearch():
     """Returns Elasticsearch bulk URL and headers."""
-    return 'http://34.142.186.206:9200/elastic_2024/_bulk', {"Content-Type": "application/x-ndjson"}
+    return 'http://elasticsearch:9200/elastic_2025/_bulk', {"Content-Type": "application/x-ndjson"}
 
 def fetch_all_data(pg_conn):
     """Fetch all user details from PostgreSQL."""
@@ -44,7 +44,7 @@ def format_data(rows):
     for row in rows:
         action = {
             "index": {
-                "_index": "elastic_2024",
+                "_index": "elastic_2025",
                 "_id": row['id']
             }
         }

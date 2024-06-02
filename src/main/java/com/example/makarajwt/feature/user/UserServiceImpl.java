@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final ElasticUserRepository elasticUserRepository;
+
 
     @Override
     public List<UserResponse> getAllUsers() {

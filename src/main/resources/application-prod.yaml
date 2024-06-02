@@ -1,11 +1,13 @@
 spring:
+
+
   data:
     elasticsearch:
       repositories:
         enabled: true
 
   elasticsearch:
-    uris: http://34.142.186.206:9200/
+    uris: http://localhost:9200/
 
   #  config jpa hibernate
   jpa:

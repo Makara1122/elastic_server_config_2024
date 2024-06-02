@@ -12,15 +12,15 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - ELASTICSEARCH_URL=http://34.142.186.206:9200
-      - ELASTICSEARCH_HOSTS=http://34.142.186.206:9200
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
       - ELASTICSEARCH_USERNAME=elastic
     ports:
       - '8888:8888'
     volumes:
       - '/myproject:/home/ite/media'
     networks:
-      - elastic5
+      - elastic7
   pgsync-python:
     build: ./pgsync-python
     container_name: pgsync-python
@@ -29,7 +29,7 @@ services:
     volumes:
       - ./pgsync-python:/app
     networks:
-      - elastic5
+      - elastic7
 
 
 
@@ -39,14 +39,14 @@ services:
    depends_on:
     - elasticsearch
    environment:
-    - ELASTICSEARCH_URL=http://34.142.186.206:9200
-    - ELASTICSEARCH_HOSTS=http://34.142.186.206:9200
+    - ELASTICSEARCH_URL=http://elasticsearch:9200
+    - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     - ELASTICSEARCH_USERNAME=elastic
     - xpack.monitoring.ui.container.elasticsearch.enabled=true
    ports:
     - "5601:5601"
    networks:
-    - elastic5
+    - elastic7
 
   elasticsearch:
    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
@@ -59,13 +59,13 @@ services:
    volumes:
     - esdata:/usr/share/elasticsearch/data
    networks:
-    - elastic5
+    - elastic7
 
 
 volumes:
   esdata:
 
 networks:
-  elastic5:
+  elastic7:
     driver: bridge
 

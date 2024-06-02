@@ -18,11 +18,11 @@ public class ELServiceImpl {
 
     public SearchResponse<User> autoSuggest(String patialUserName) throws IOException {
         Supplier<Query> supplier = ESUtils.createSupplierAutoSuggest(patialUserName);
-        return elasticsearchClient.search(s->s.index("elastic_2024").query(supplier.get()), com.example.makarajwt.domain.User.class);
+        return elasticsearchClient.search(s->s.index("elastic_2025").query(supplier.get()), com.example.makarajwt.domain.User.class);
     }
 
     public SearchResponse<User> autoSuggestEmail(String patialEmail) throws IOException {
         Supplier<Query> supplier = ESUtils.createSupplierAutoSuggest2(patialEmail);
-        return elasticsearchClient.search(s->s.index("elastic_2024").query(supplier.get()), com.example.makarajwt.domain.User.class);
+        return elasticsearchClient.search(s->s.index("elastic_2025").query(supplier.get()), com.example.makarajwt.domain.User.class);
     }
 }

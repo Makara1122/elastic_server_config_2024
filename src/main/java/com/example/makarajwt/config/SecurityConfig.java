@@ -63,7 +63,7 @@ public class SecurityConfig {
     public RestClient getRestClient() {
         final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("", ""));
-        return RestClient.builder(new HttpHost("34.142.186.206", 9200))
+        return RestClient.builder(new HttpHost("localhost", 9200))
                 .setHttpClientConfigCallback(httpClientBuilder -> {
                     httpClientBuilder.disableAuthCaching();
                     httpClientBuilder.setDefaultHeaders(List.of(

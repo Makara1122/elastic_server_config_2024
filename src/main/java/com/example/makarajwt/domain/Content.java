@@ -12,8 +12,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name = "content_tbl")
-@Document(indexName = "contents")
+//@Table(name = "content_tbl")
+//@Document(indexName = "contents")
 public class Content {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

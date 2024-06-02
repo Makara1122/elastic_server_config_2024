@@ -13,4 +13,4 @@ RUN chmod +x wait-for-services.sh
 
 COPY sync.py sync.py
 
-CMD ["./wait-for-services.sh", "34.142.186.206", "5432", "34.142.186.206", "9200", "python", "sync.py"]
+CMD ["./wait-for-services.sh", "34.142.186.206", "5432", "elasticsearch", "9200", "python", "sync.py"]

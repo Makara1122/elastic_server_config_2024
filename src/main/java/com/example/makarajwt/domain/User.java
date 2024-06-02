@@ -15,7 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "user_tbl")
-@Document(indexName = "elastic_2024")
+@Document(indexName = "elastic_2025")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     @Id
