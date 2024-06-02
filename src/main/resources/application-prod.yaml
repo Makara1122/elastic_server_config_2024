@@ -17,7 +17,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  #  datasource
+   #  datasource
   datasource:
     username: postgres
     password: qwerty
